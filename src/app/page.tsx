@@ -17,7 +17,7 @@ console.log(arr);
     <main className={styles.main}>
       <div className={styles.grid}>
       {
-        arr.map((num, index)=>{
+        arr && arr.map((num, index)=>{
           return(
            <div key={num} className={styles.card}>
              <Image

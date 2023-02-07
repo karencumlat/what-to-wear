@@ -1,8 +1,8 @@
+'use client';
+
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
@@ -11,7 +11,9 @@ while(arr.length < 5){
     const r = Math.floor(Math.random() * 24) + 1;
     if(arr.indexOf(r) === -1) arr.push(r);
 }
+
 console.log(arr);
+console.log(arr.length);
 
   return (
     <main className={styles.main}>

@@ -8,7 +8,6 @@ import styles from './page.module.css'
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
   
-
   function myRandomInts(quantity:number, max:number){
   const set = new Set()
   while(set.size < quantity) {

@@ -7,8 +7,16 @@ import styles from './page.module.css'
 
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-  
-  const arr = [];
+  let arr = [];
+  if (window.performance) {
+    if (performance.navigation.type == 1) {
+     arr=[]
+     console.log( "arr reset");
+    } else {
+      console.log( "This page is not reloaded");
+    }
+  }
+
   while(arr.length < 5){
       const r = Math.floor(Math.random() * 24) + 1;
       if(arr.indexOf(r) === -1) arr.push(r);

@@ -8,13 +8,16 @@ import styles from './page.module.css'
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
   let arr = [];
-  if (typeof window !== "undefined") {
-    arr=[]
-  }
+  
 
   while(arr.length < 5){
+    if(arr.length===5){
+      arr=[]
+    }else{
       const r = Math.floor(Math.random() * 24) + 1;
       if(arr.indexOf(r) === -1) arr.push(r);
+
+    }
   }
   
   console.log(arr);

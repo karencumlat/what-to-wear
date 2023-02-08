@@ -7,11 +7,8 @@ import styles from './page.module.css'
 
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-  let arr = [];
-  if(arr.length===5){
-    arr=[]
-  }
-
+  const [set, reSet] = useState(false)
+  const arr = [];
   while(arr.length < 5){
       const r = Math.floor(Math.random() * 24) + 1;
       if(arr.indexOf(r) === -1) arr.push(r);
@@ -22,9 +19,10 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+    
       <div className={styles.grid}>
       {
-        arr && arr.map((num, index)=>{
+        arr.map((num, index)=>{
           return(
            <div className={styles.card} key={index}>
              <Image
@@ -44,7 +42,7 @@ export default function Home() {
       </div>
     
       <h1 className='text-3xl font-bold p-6'>
-       What to Wear
+      <button onClick={()=>{reSet(!set)}}>What to Wear</button>
       </h1>
       <div className={styles.description}>
         <p>

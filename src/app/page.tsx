@@ -24,7 +24,7 @@ const arr = Array.from(myRandomInts(5, 25))
       {
         arr && arr.map((num, index)=>{
           return(
-           <div key={num} className={styles.card}>
+           <div className={styles.card} key={index}>
              <Image
               src={`/images/${num}.png`}
               alt="Vercel Logo"

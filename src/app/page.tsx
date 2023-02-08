@@ -8,15 +8,14 @@ import styles from './page.module.css'
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
   
-  function myRandomInts(quantity:number, max:number){
-  const set = new Set()
-  while(set.size < quantity) {
-    set.add(Math.floor(Math.random() * max) + 1)
+  const arr = [];
+  while(arr.length < 5){
+      const r = Math.floor(Math.random() * 24) + 1;
+      if(arr.indexOf(r) === -1) arr.push(r);
   }
-  return set
-}
-
-const arr = Array.from(myRandomInts(5, 25))
+  
+  console.log(arr);
+  console.log(arr.length);
 
   return (
     <main className={styles.main}>

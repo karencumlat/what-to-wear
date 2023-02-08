@@ -1,19 +1,23 @@
 'use client';
 
 import Image from 'next/image'
+import { useState } from 'react';
 import styles from './page.module.css'
 
 
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-  const arr = [];
-while(arr.length < 5){
-    const r = Math.floor(Math.random() * 24) + 1;
-    if(arr.indexOf(r) === -1) arr.push(r);
+  
+
+  function myRandomInts(quantity:number, max:number){
+  const set = new Set()
+  while(set.size < quantity) {
+    set.add(Math.floor(Math.random() * max) + 1)
+  }
+  return set
 }
 
-console.log(arr);
-console.log(arr.length);
+const arr = Array.from(myRandomInts(5, 25))
 
   return (
     <main className={styles.main}>
@@ -35,7 +39,7 @@ console.log(arr.length);
            </div>
           )
         })          
-      }
+      } 
       </div>
     
       <h1 className='text-3xl font-bold p-6'>

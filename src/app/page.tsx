@@ -8,13 +8,8 @@ import styles from './page.module.css'
 export default function Home() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
   let arr = [];
-  if (window.performance) {
-    if (performance.navigation.type == 1) {
-     arr=[]
-     console.log( "arr reset");
-    } else {
-      console.log( "This page is not reloaded");
-    }
+  if (typeof window !== "undefined") {
+    arr=[]
   }
 
   while(arr.length < 5){
